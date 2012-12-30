@@ -3,8 +3,6 @@
 describe 'brancusi.BaseObject', ->
   
   class FooModule
-    @bar: 'bar'
-    baz: 'baz'
     
   describe '.include', ->
     it "invokes brancusi.include on the calling class, passing the given module", ->
