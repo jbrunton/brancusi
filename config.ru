@@ -1,9 +1,14 @@
 require 'action_controller/railtie'
+require 'jasmine-stories'
 require 'jasminerice'
 require 'sprockets/railtie'
 require 'jquery-rails'
 
 class JasmineTest < Rails::Application
+  routes.append do
+    mount JasmineStories::Engine => "/jasmine-stories"
+  end
+
   routes.append do
     mount Jasminerice::Engine => '/jasmine'
   end

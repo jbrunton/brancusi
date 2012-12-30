@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'thin'
 
   s.add_development_dependency 'jasminerice'
+  s.add_development_dependency 'jasmine-stories'
   s.add_development_dependency 'guard-jasmine'
   s.add_development_dependency 'jquery-rails'
   s.add_development_dependency 'underscore-rails'
