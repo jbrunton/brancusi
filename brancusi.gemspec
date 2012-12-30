@@ -13,7 +13,8 @@ Gem::Specification.new do |s|
   s.summary     = "TODO: Summary of Brancusi."
   s.description = "TODO: Description of Brancusi."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.require_paths = ["lib"]
 
   s.add_dependency "rails", "~> 3.2.9"
   # s.add_dependency "jquery-rails"
@@ -31,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-jasmine'
   s.add_development_dependency 'jquery-rails'
   s.add_development_dependency 'underscore-rails'
+  s.add_dependency "railties", "~> 3.1"
 end
