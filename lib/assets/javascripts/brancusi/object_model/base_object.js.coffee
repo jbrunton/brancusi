@@ -7,14 +7,21 @@ namespace "brancusi"
 #
 class brancusi.BaseObject
 
-    # Static method to include a module into a class.
-    #
-    # @param module [Object] the module to include.
-    #
-    @include: ( module ) ->
-        brancusi.include( @, module )
+  # Static method to include a module into the class.
+  #
+  # @param module [Object] the module to include.
+  #
+  @include: (module) ->
+    brancusi.include(@, module)
+      
+  # Static method to extend the class with a module.
+  #
+  # @param module [Object] the module to include.
+  #
+  @extend: (module) ->
+    brancusi.extend(@, module)
 
-    # Decorates an instance with the given decorator.
-    #
-    decorate: ->
-        brancusi.decorate( @, arguments... )
+  # Decorates the instance with the given decorator.
+  #
+  decorate: (decorator, args...)->
+    brancusi.decorate(@, decorator, args...)

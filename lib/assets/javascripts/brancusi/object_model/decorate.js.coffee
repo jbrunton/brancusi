@@ -11,5 +11,5 @@ namespace "brancusi"
 #
 brancusi.decorate = ( target, decorator, args... ) ->
 
-    core.extend( target, decorator )
+    brancusi.extend( target, decorator )
     decorator.apply( target, args )
