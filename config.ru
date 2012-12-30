@@ -1,4 +1,3 @@
-require 'rails/all'
 require 'action_controller/railtie'
 require 'jasminerice'
 require 'sprockets/railtie'
