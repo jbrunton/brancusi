@@ -1,7 +1,6 @@
-#= require ./extend
-
 namespace "brancusi"
 
+#= require ./extend
     
 # Decorates the target object with methods from the given decorator, and invokes the constructor.
 #

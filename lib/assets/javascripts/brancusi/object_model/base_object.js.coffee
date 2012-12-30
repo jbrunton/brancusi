@@ -1,7 +1,7 @@
+namespace "brancusi"
+
 #= require ./include
 #= require ./decorate
-
-namespace "brancusi"
 
 # Implements convenience methods to include mixins and decorate instances.
 #
