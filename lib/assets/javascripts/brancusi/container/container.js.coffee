@@ -47,12 +47,12 @@ class brancusi.Container
 
   # Returns an instance of the given dependency, resolving any child dependencies.
   #
-  # @overLoad resolve(name)
+  # @overload resolve(name)
   #   Resolves the dependency according to the name of the mapping.
   #   @param name [String] the name of the dependency mapping.
   #   @return [Object] the fully resolved dependency.
   #
-  # @overLoad resolve(target, opts)
+  # @overload resolve(target, opts)
   #   Resolves any unresolved dependencies on a given object.
   #   @param target [Object] the object to resolve dependencies for.
   #   @return [Object] target.
