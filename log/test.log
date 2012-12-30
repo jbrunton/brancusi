@@ -1,0 +1,63 @@
+Started HEAD "/jasmine" for 127.0.0.1 at 2012-12-30 16:54:14 +0000
+Processing by Jasminerice::SpecController#index as */*
+  Rendered /Users/John/.rvm/gems/ruby-1.9.3-p194/gems/jasminerice-0.0.10/app/views/jasminerice/spec/index.html.haml (13.7ms)
+Completed 200 OK in 25ms (Views: 25.0ms)
+Started GET "/jasmine" for 127.0.0.1 at 2012-12-30 16:54:15 +0000
+Processing by Jasminerice::SpecController#index as HTML
+  Rendered /Users/John/.rvm/gems/ruby-1.9.3-p194/gems/jasminerice-0.0.10/app/views/jasminerice/spec/index.html.haml (3.0ms)
+Completed 200 OK in 4ms (Views: 3.9ms)
+Started GET "/assets/jasmine.css" for 127.0.0.1 at 2012-12-30 16:54:15 +0000
+Compiled jasmine.css  (20ms)  (pid 19401)
+Served asset /jasmine.css - 200 OK (29ms)
+Started GET "/assets/spec.js" for 127.0.0.1 at 2012-12-30 16:54:15 +0000
+Error compiling asset spec.js:
+Sprockets::FileNotFound: couldn't find file 'jasmine-engine'
+  (in /git/engine-tests/brancusi/spec/javascripts/spec.js.coffee:1)
+Served asset /spec.js - 500 Internal Server Error
+
+
+Started GET "/assets/jasminerice.js" for 127.0.0.1 at 2012-12-30 16:54:15 +0000
+Compiled jasmine.js  (0ms)  (pid 19401)
+Compiled jasmine-html.js  (0ms)  (pid 19401)
+Compiled jasmine-jquery-1.4.2.js  (0ms)  (pid 19401)
+Compiled jasminerice.js  (209ms)  (pid 19401)
+Served asset /jasminerice.js - 200 OK (218ms)
+Started GET "/assets/spec.css" for 127.0.0.1 at 2012-12-30 16:54:16 +0000
+Compiled spec.css  (0ms)  (pid 19401)
+Served asset /spec.css - 200 OK (8ms)
+Started HEAD "/jasmine" for 127.0.0.1 at 2012-12-30 16:54:43 +0000
+Processing by Jasminerice::SpecController#index as */*
+  Rendered /Users/John/.rvm/gems/ruby-1.9.3-p194/gems/jasminerice-0.0.10/app/views/jasminerice/spec/index.html.haml (2.9ms)
+Completed 200 OK in 12ms (Views: 12.0ms)
+Started GET "/jasmine" for 127.0.0.1 at 2012-12-30 16:54:44 +0000
+Processing by Jasminerice::SpecController#index as HTML
+  Rendered /Users/John/.rvm/gems/ruby-1.9.3-p194/gems/jasminerice-0.0.10/app/views/jasminerice/spec/index.html.haml (2.9ms)
+Completed 200 OK in 4ms (Views: 3.8ms)
+Started GET "/assets/jasmine.css" for 127.0.0.1 at 2012-12-30 16:54:44 +0000
+Served asset /jasmine.css - 200 OK (24ms)
+Started GET "/assets/spec.css" for 127.0.0.1 at 2012-12-30 16:54:44 +0000
+Served asset /spec.css - 200 OK (2ms)
+Started GET "/assets/jasminerice.js" for 127.0.0.1 at 2012-12-30 16:54:44 +0000
+Served asset /jasminerice.js - 200 OK (4ms)
+Started GET "/assets/spec.js" for 127.0.0.1 at 2012-12-30 16:54:44 +0000
+Compiled brancusi/index.js  (129ms)  (pid 19426)
+Compiled foo_spec.js  (137ms)  (pid 19426)
+Compiled spec.js  (455ms)  (pid 19426)
+Served asset /spec.js - 200 OK (463ms)
+Started HEAD "/jasmine" for 127.0.0.1 at 2012-12-30 16:55:04 +0000
+Processing by Jasminerice::SpecController#index as */*
+  Rendered /Users/John/.rvm/gems/ruby-1.9.3-p194/gems/jasminerice-0.0.10/app/views/jasminerice/spec/index.html.haml (2.9ms)
+Completed 200 OK in 13ms (Views: 12.7ms)
+Started GET "/jasmine" for 127.0.0.1 at 2012-12-30 16:55:05 +0000
+Processing by Jasminerice::SpecController#index as HTML
+  Rendered /Users/John/.rvm/gems/ruby-1.9.3-p194/gems/jasminerice-0.0.10/app/views/jasminerice/spec/index.html.haml (2.9ms)
+Completed 200 OK in 4ms (Views: 3.8ms)
+Started GET "/assets/jasmine.css" for 127.0.0.1 at 2012-12-30 16:55:05 +0000
+Served asset /jasmine.css - 200 OK (23ms)
+Started GET "/assets/spec.css" for 127.0.0.1 at 2012-12-30 16:55:05 +0000
+Served asset /spec.css - 200 OK (2ms)
+Started GET "/assets/jasminerice.js" for 127.0.0.1 at 2012-12-30 16:55:05 +0000
+Served asset /jasminerice.js - 200 OK (4ms)
+Started GET "/assets/spec.js" for 127.0.0.1 at 2012-12-30 16:55:05 +0000
+Compiled spec.js  (145ms)  (pid 19447)
+Served asset /spec.js - 200 OK (153ms)

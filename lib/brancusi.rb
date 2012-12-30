@@ -1,5 +1,4 @@
-require "brancusi/version"
+require "brancusi/engine"
 
 module Brancusi
-  # Your code goes here...
 end
