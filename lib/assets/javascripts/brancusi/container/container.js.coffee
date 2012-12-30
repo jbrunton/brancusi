@@ -89,7 +89,7 @@ class brancusi.Container
     # @private
     # @param target [Object] the target object.
     #
-    _resolve_instance: ( target ) ->
+    _resolve_object: ( target ) ->
         for name, args of target.dependencies
             [dependency, dependency_args] = args
             if typeof dependency == "function"
