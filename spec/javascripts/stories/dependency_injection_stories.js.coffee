@@ -15,19 +15,12 @@ feature "Dependency Injection", ->
         constructor: ( @name ) ->
         
         
-    create_container = ( mappings ) ->
-        container = new brancusi.Container
-        for name, klass of mappings
-            container.register_class name, klass
-        container
-        
-        
     scenario "Resolve dependency properties", ->
     
         container = fred = null
     
         Given "I have a container with a class mapping registered", ->
-            container = create_container "Hat": Hat, "Person": Person
+            container = create 'container', "Hat": Hat, "Person": Person
     
         When "I resolve a new instance of the mapping with the container", ->
             fred = container.resolve "Person", ["Fred"]
@@ -46,7 +39,7 @@ feature "Dependency Injection", ->
             @dependency crown: "Hat", "crown", "gold"
         
         Given "I have a container with a singleton class mapping", ->
-            container = create_container "Hat": Hat, "Queen": Queen
+            container = create 'container', "Hat": Hat, "Queen": Queen
             
         When "I resolve an instance of the mapping", ->
             queen = container.resolve "Queen", ["Elizabeth"]
@@ -68,7 +61,7 @@ feature "Dependency Injection", ->
                 container.resolve "Person", ["William"]
         
         Given "I have a container", ->
-            container = create_container "Hat": Hat, "Queen": Queen, "Person": Person
+            container = create 'container', "Hat": Hat, "Queen": Queen, "Person": Person
             
         When "I resolve the mapping", ->
             queen = container.resolve "Queen", ["Elizabeth"]
