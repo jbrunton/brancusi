@@ -6,7 +6,7 @@ class brancusi.ApplicationModule extends brancusi.EventObject
     constructor: (@name) ->
     
     @dependency sandbox: (container) ->
-        container.resolve "Sandbox", [@]
+        container.resolve "Sandbox", [@name]
 
     @dependency container: (container) ->
         container.child().register_instance "Sandbox", @sandbox

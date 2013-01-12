@@ -9,7 +9,7 @@ describe "brancusi.Sandbox", ->
       .register_instance('Mediator', jasmine.createSpyObj('Mediator', ['publish', 'subscribe']))
       .register_class('Sandbox', brancusi.Sandbox)
         
-    sandbox = container.resolve('Sandbox', [{ name: 'some' }])
+    sandbox = container.resolve('Sandbox', ['some'])
 
   it "has a mediator", ->
     expect(sandbox.mediator).toBeDefined()

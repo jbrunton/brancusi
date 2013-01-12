@@ -5,7 +5,7 @@ namespace "brancusi"
 class brancusi.Sandbox extends brancusi.DependentObject
   @dependency mediator: "Mediator"
 
-  constructor: (@module) ->
+  constructor: (@scope) ->
   
   scoped_name: (input, opts) =>
     if opts?.match_subscriptions?
@@ -15,7 +15,7 @@ class brancusi.Sandbox extends brancusi.DependentObject
         
     if input.match( regex )
       [_, _, scope, event] = regex.exec(input)            
-      scope ?= @module.name
+      scope ?= @scope
       "#{scope}.#{event}"
     else if opts?.validate?
       throw new Error("Invalid event name: #{input}")
