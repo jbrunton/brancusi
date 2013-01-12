@@ -1,4 +1,5 @@
 #= require ./events_module
+#= require ../container/dependent_object
 
 namespace "brancusi"
 
