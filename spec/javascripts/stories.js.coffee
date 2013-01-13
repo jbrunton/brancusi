@@ -3,4 +3,5 @@
 #= require underscore
 #= require underscore.string
 #= require brancusi/namespace
+#= require ./support
 #= require_tree ./stories
