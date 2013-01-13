@@ -1,6 +1,6 @@
 #= require brancusi/application
 
-feature "Application", ->
+feature "Application Modules", ->
 
   summary(
       'As a client of the framework',

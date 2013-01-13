@@ -24,4 +24,25 @@ describe "brancusi.Mediator", ->
 
     it "passes the given arguments to the subscriber", ->
       mediator.publish 'foo', 'arg1', 'arg2'
-      expect(test_handler).toHaveBeenCalledWith('arg1', 'arg2')            
+      expect(test_handler).toHaveBeenCalledWith('arg1', 'arg2')
+      
+  describe "#bind_subscriptions", ->
+    
+    target = null
+    
+    beforeEach ->
+      target = jasmine.createSpyObj('Target', ['@event', '@some.event'])
+    
+    it "subscribes the target's event handlers", ->
+      spyOn(mediator, 'subscribe')
+      mediator.bind_subscriptions(target)
+      expect(mediator.subscribe).toHaveBeenCalledWith('event', jasmine.any(Function), target)
+      expect(mediator.subscribe).toHaveBeenCalledWith('some.event', jasmine.any(Function), target)
+    
+    it "subscribes the target's event handlers using the given scope, if one is provided", ->
+      spyOn(mediator, 'subscribe')
+      mediator.bind_subscriptions(target, 'target')
+      expect(mediator.subscribe).toHaveBeenCalledWith('target.event', jasmine.any(Function), target)
+      expect(mediator.subscribe).toHaveBeenCalledWith('some.event', jasmine.any(Function), target)
+  
+    
