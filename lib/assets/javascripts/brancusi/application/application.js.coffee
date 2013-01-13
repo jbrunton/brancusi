@@ -40,11 +40,11 @@ class brancusi.Application extends brancusi.EventObject
     @
     
   initialize: ->
-    @mediator.publish "Application.initialize"
+    @mediator.publish "application.initialize"
     @
 
   run: (bootstrapper) ->
-    @mediator.publish "Application.ready"
+    @mediator.publish "application.ready"
     @
 
   configure_modules: ->
