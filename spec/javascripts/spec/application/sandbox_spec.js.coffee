@@ -23,13 +23,6 @@ describe "brancusi.Sandbox", ->
     it "publishes events with arguments", ->
       sandbox.publish('some.event', 1, 2, 3)
       expect(sandbox.mediator.publish_scoped).toHaveBeenCalledWith('some.event', 'some', 1, 2, 3)
-  
-    # it "implicitly scopes published events according to the name of the sandbox module", ->
-    #   sandbox.publish('event')        
-    #   expect(sandbox.mediator.publish_scoped).toHaveBeenCalledWith('some.event')
-    # 
-    # it "errors if asked to publish an invalid event name", ->
-    #   expect(-> sandbox.publish_scoped('not.an.event')).toThrow()
       
   describe "#bind_subscriptions", ->
       
