@@ -1,4 +1,5 @@
 #= require brancusi/events
+#= require brancusi/routes
 #= require ./bootstrapper
 
 namespace "brancusi"
@@ -25,6 +26,8 @@ class brancusi.Application extends brancusi.EventObject
 
   # Model classes for the application
   @models: {}
+  
+  @routes: new brancusi.routes.Mapper
 
   # Instantiates the application and bootstrapper, and resolves any dependencies, modules and controllers.
   #
@@ -59,6 +62,7 @@ class brancusi.Application extends brancusi.EventObject
   #
   initialize: ->
     @_bind_events()
+    @_map_routes()
     @mediator.publish "application.initialize"
     @
 
@@ -67,6 +71,7 @@ class brancusi.Application extends brancusi.EventObject
   # @return [Application] the application instance.
   #
   run: (bootstrapper) ->
+    @router.start() if @router?
     @mediator.publish "application.ready"
     @
 
@@ -101,3 +106,10 @@ class brancusi.Application extends brancusi.EventObject
     
     for controller_name, controller of @controllers
       controller.sandbox.bind_subscriptions(controller)
+      
+  _map_routes: ->
+    return unless @router?
+    @constructor.routes.apply(@, @router)
+    # route_mapper = new @container.resolve 'RouteMapper'
+    # route_mapper.draw(@constructor.routes.( config?.routes || -> )
+    # @router?.initialize?()
