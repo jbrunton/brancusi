@@ -1,6 +1,5 @@
 #= require brancusi/events
-#= require brancusi/routes
-#= require ./bootstrapper
+#= require brancusi/routes/mapper
 
 namespace "brancusi"
 
@@ -13,19 +12,19 @@ class brancusi.Application extends brancusi.EventObject
     bootstrapper: brancusi.Bootstrapper
 
   # Module classes for the application
-  @modules: {}
+  @Modules: {}
   
   # Module instances
   modules: {}
   
   # Controller classes for the application
-  @controllers: {}
+  @Controllers: {}
   
   # Controller instances
   controllers: {}
 
   # Model classes for the application
-  @models: {}
+  @Models: {}
   
   @routes: new brancusi.routes.Mapper
 
@@ -62,8 +61,7 @@ class brancusi.Application extends brancusi.EventObject
   #
   initialize: ->
     @_bind_events()
-    @_map_routes()
-    @mediator.publish "application.initialize"
+    @mediator.publish "application.initialize", @
     @
 
   # Publishes the application.ready event.
@@ -71,7 +69,6 @@ class brancusi.Application extends brancusi.EventObject
   # @return [Application] the application instance.
   #
   run: (bootstrapper) ->
-    @router.start() if @router?
     @mediator.publish "application.ready"
     @
 
@@ -79,8 +76,9 @@ class brancusi.Application extends brancusi.EventObject
   # Instantiates and resolves the application modules.
   #
   _resolve_modules: ->
+    @modules.router = @router if @router?
     module_regex = /(.*)Module/ # e.g. AuthModule
-    for klass_name, klass of @constructor.modules when matches = module_regex.exec(klass_name)
+    for klass_name, klass of @constructor.Modules when matches = module_regex.exec(klass_name)
       module_name = _.string.underscored(matches[1]) # e.g. "auth"
       module = @container.resolve(new klass(module_name))
       # module.sandbox.bind_subscriptions(module)
@@ -91,7 +89,7 @@ class brancusi.Application extends brancusi.EventObject
   #
   _resolve_controllers: ->
     controller_regex = /(.*)Controller/ # e.g. HomeController
-    for klass_name, klass of @constructor.controllers when matches = controller_regex.exec(klass_name)
+    for klass_name, klass of @constructor.Controllers when matches = controller_regex.exec(klass_name)
       controller_name = _.string.underscored(matches[0]) # e.g. home_controller
       controller = @container.resolve(new klass(controller_name))
       # controller.sandbox.bind_subscriptions(controller)
@@ -107,9 +105,6 @@ class brancusi.Application extends brancusi.EventObject
     for controller_name, controller of @controllers
       controller.sandbox.bind_subscriptions(controller)
       
-  _map_routes: ->
-    return unless @router?
-    @constructor.routes.apply(@, @router)
     # route_mapper = new @container.resolve 'RouteMapper'
     # route_mapper.draw(@constructor.routes.( config?.routes || -> )
     # @router?.initialize?()

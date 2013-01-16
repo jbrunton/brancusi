@@ -17,7 +17,7 @@ class brancusi.routes.Mapper
     apply: (app, router) ->
       for url, { controller, action } of @mappings
         dispatcher = new brancusi.routes.Dispatcher(app, controller, action)
-        router.get(url, dispatcher.dispatch)
+        router.route(url, dispatcher.dispatch)
         
     # resource: ( resource ) ->
     #     for action in ['view', 'edit']
