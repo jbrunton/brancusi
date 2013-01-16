@@ -12,7 +12,14 @@ class brancusi.routes.Mapper
         block.apply(@)        
         
     match: (url, opts) ->
-      @mappings[url] = opts
+      @mappings[url] = @parse(opts)
+      
+    parse: (opts) ->
+      if _.isString(opts)
+        [controller, action] = /(.*)#(.*)/.exec(opts)[1..2]
+        { controller: controller, action: action }
+      else
+        opts
       
     apply: (app, router) ->
       for url, { controller, action } of @mappings

@@ -6,7 +6,6 @@ class brancusi.routes.DavisRouter extends brancusi.Router
     @davis = new Davis
     
   route: (url, action) ->
-    super(url, action)
     @davis.get(url, action)
     
   configure: (config) ->

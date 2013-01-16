@@ -5,5 +5,7 @@ class brancusi.Router extends brancusi.ApplicationModule
     app.constructor.routes.apply(app, @)
     
   route: (url, action) ->
-    console.log("route: #{url}")
+    throw new Error("Missing implementation for Router.route")
     
+  configure: (config) ->
+    throw new Error("Missing implementation for Router.configure")
