@@ -76,7 +76,8 @@ class brancusi.Application extends brancusi.EventObject
   # Instantiates and resolves the application modules.
   #
   _resolve_modules: ->
-    @modules.router = @router if @router?
+    # @modules.router = @router if @router?
+    # @modules.renderer = @renderer if @renderer?
     module_regex = /(.*)Module/ # e.g. AuthModule
     for klass_name, klass of @constructor.Modules when matches = module_regex.exec(klass_name)
       module_name = _.string.underscored(matches[1]) # e.g. "auth"
@@ -99,6 +100,9 @@ class brancusi.Application extends brancusi.EventObject
   # Binds event handlers on the modules and controllers.
   #
   _bind_events: ->
+    @router.sandbox.bind_subscriptions(@router)
+    @renderer.sandbox.bind_subscriptions(@renderer)
+    
     for module_name, module of @modules
       module.sandbox.bind_subscriptions(module)
     

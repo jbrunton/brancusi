@@ -21,7 +21,10 @@ class brancusi.DependentModule
   #   @param dependencies [Object] an object naming a number of dependencies
   # 
   @dependency: (dependencies, args...) ->
-    @::dependencies ?= {}
+    @dependencies ?= {}
+
+    if @__super__? and @__super__.constructor.dependencies == @dependencies
+      @dependencies = _.clone(@__super__.constructor.dependencies)
     
     for dependency_name, dependency_type of dependencies
-      @::dependencies[dependency_name] = [dependency_type, args]
+      @dependencies[dependency_name] = [dependency_type, args]

@@ -130,7 +130,7 @@ class brancusi.Container
   # @param target [Object] the target object.
   #
   _resolve_object: (target) ->
-    for name, args of target.dependencies
+    for name, args of target.constructor.dependencies
       [dependency, dependency_args] = args
       if typeof dependency == "function"
         target[name] = dependency.apply(target, [@])

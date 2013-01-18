@@ -13,5 +13,6 @@ class brancusi.Bootstrapper
         
         container.register_class "Sandbox", brancusi.Sandbox
         container.register_class "Mediator", brancusi.Mediator, singleton: true
+        container.register_class "RegionManager", brancusi.renderer.RegionManager, singleton: true
         
         container
