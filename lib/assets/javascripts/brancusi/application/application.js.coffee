@@ -91,7 +91,7 @@ class brancusi.Application extends brancusi.EventObject
   _resolve_controllers: ->
     controller_regex = /(.*)Controller/ # e.g. HomeController
     for klass_name, klass of @constructor.Controllers when matches = controller_regex.exec(klass_name)
-      controller_name = _.string.underscored(matches[0]) # e.g. home_controller
+      controller_name = _.string.underscored(matches[1]) # e.g. home
       controller = @container.resolve(new klass(controller_name))
       # controller.sandbox.bind_subscriptions(controller)
       @controllers[controller_name] = controller
