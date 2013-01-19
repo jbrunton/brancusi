@@ -34,7 +34,7 @@ class brancusi.Application extends brancusi.EventObject
   #
   @create: ->
     @instance = new @
-    bootstrapper = new @config.bootstrapper
+    bootstrapper = new @Bootstrapper
     @instance.resolve(bootstrapper)    
 
   # Resolves, initializes, and runs the application.
