@@ -16,3 +16,4 @@ class Brancusi.Router extends Brancusi.ApplicationModule
     
   configure: (config) ->
     throw new Error("Missing implementation for Router.configure")
+    

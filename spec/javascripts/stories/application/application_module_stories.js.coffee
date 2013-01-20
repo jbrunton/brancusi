@@ -12,7 +12,7 @@ feature "Application Modules", ->
     Application = app = null
 
     Given "I have an application with a module", ->
-      Application = class extends Brancusi.Application.reset()
+      Application = window.create('Application')
       Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
         
     When "I configure it", ->
@@ -26,7 +26,7 @@ feature "Application Modules", ->
     Application = app = null
     
     Given "I have an application with a module", ->
-      Application = class extends Brancusi.Application.reset()
+      Application = window.create('Application')
       Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
         @on 'application.initialize', ->
 
@@ -44,7 +44,7 @@ feature "Application Modules", ->
     Application = app = null
     
     Given "I have an application with a module", ->
-      Application = class extends Brancusi.Application.reset()
+      Application = window.create('Application')
       Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
           @on 'application.ready', ->
           
@@ -62,7 +62,7 @@ feature "Application Modules", ->
     Application = app = null
 
     Given "I have an application with a module", ->
-      Application = class extends Brancusi.Application.reset()
+      Application = window.create('Application')
       Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
         @on 'foo', ->
           
@@ -81,7 +81,7 @@ feature "Application Modules", ->
     Application = app = null
     
     Given "I have an application with two modules", ->
-      Application = class extends Brancusi.Application.reset()
+      Application = window.create('Application')
       
       Application.Modules.GreeterModule = class extends Brancusi.ApplicationModule
         greet: -> @publish 'greet'
