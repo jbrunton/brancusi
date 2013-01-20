@@ -1,13 +1,13 @@
 #= require brancusi/object_model
 #= require brancusi/container
 
-describe "brancusi.DependentModule", ->
+describe "Brancusi.DependentModule", ->
   
   Foo = null
   
   beforeEach ->
-    Foo = class extends brancusi.BaseObject
-      @include brancusi.DependentModule
+    Foo = class extends Brancusi.BaseObject
+      @include Brancusi.DependentModule
 
   describe ".dependency", ->
     it "adds the parameter as a dependency to the target class", ->

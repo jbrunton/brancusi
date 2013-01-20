@@ -1,8 +1,8 @@
-namespace "brancusi"
+namespace "Brancusi"
 
 # Implementation of a DI container.
 #
-class brancusi.Container
+class Brancusi.Container
 
   # Creates an instance of a container.
   #

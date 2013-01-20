@@ -1,4 +1,4 @@
-namespace "brancusi"
+namespace "Brancusi"
 
 # A module to facilitate the specification of dependencies.  Dependencies are defined on the
 # 'dependencies' property of the target's prototype, in the format:
@@ -7,7 +7,7 @@ namespace "brancusi"
 #
 # @mixin
 #
-class brancusi.DependentModule
+class Brancusi.DependentModule
 
   # Adds the named dependencies to the object's ::dependencies property
   #

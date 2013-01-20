@@ -1,9 +1,9 @@
 #= require brancusi/object_model
 #= require ./dependent_module
 
-namespace "brancusi"
+namespace "Brancusi"
 
 # Base class for dependent classes.
 #
-class brancusi.DependentObject extends brancusi.BaseObject
-    @include brancusi.DependentModule
+class Brancusi.DependentObject extends Brancusi.BaseObject
+    @include Brancusi.DependentModule

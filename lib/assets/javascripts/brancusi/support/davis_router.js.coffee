@@ -1,6 +1,6 @@
-namespace "brancusi.routes"
+namespace "Brancusi.Davis"
 
-class brancusi.routes.DavisRouter extends brancusi.Router
+class Brancusi.Davis.Router extends Brancusi.Router
   
   constructor: ->
     @davis = new Davis

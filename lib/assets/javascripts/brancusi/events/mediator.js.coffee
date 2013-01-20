@@ -1,8 +1,8 @@
-namespace "brancusi"
+namespace "Brancusi"
 
 # An implementation of the mediator pattern.  This class should not be referred to directly, as the AER pattern is preferred.
 #
-class brancusi.Mediator
+class Brancusi.Mediator
 
   constructor: ->
     @subscribers = {}

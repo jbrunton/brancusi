@@ -1,10 +1,11 @@
-class brancusi.Router extends brancusi.ApplicationModule
+namespace "Brancusi"
+
+class Brancusi.Router extends brancusi.ApplicationModule
   
   constructor: ->
     super('router')
   
   initialize: (app) ->
-    console.log('initializing router')
     @configure(app.constructor.config)
     app.constructor.routes.apply(app, @)
     

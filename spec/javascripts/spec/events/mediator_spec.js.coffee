@@ -1,6 +1,6 @@
 #= require brancusi/events
 
-describe "brancusi.Mediator", ->
+describe "Brancusi.Mediator", ->
 
   mediator = test_handler = null
 
@@ -9,14 +9,14 @@ describe "brancusi.Mediator", ->
     
   describe "#subscribe", ->
     it "registers the given subscriber for the named event", ->
-      mediator = new brancusi.Mediator
+      mediator = new Brancusi.Mediator
       mediator.subscribe 'foo', test_handler
       expect(mediator.subscribers['foo']).toContain(jasmine.any(Function))
       
   describe "#publish", ->
     
     beforeEach ->
-      mediator = new brancusi.Mediator
+      mediator = new Brancusi.Mediator
       mediator.subscribe 'foo', test_handler
     
     it "invokes subscribed handlers for the event", ->
@@ -30,7 +30,7 @@ describe "brancusi.Mediator", ->
   describe "#publish_scoped", ->
     
     beforeEach ->
-      mediator = new brancusi.Mediator
+      mediator = new Brancusi.Mediator
       mediator.subscribe 'foo.bar', test_handler
       
     it "implicitly scopes events", ->
@@ -49,7 +49,7 @@ describe "brancusi.Mediator", ->
     target = null
     
     beforeEach ->
-      mediator = new brancusi.Mediator
+      mediator = new Brancusi.Mediator
       target = jasmine.createSpyObj('Target', ['@event', '@some.event'])
     
     it "subscribes the target's event handlers", ->

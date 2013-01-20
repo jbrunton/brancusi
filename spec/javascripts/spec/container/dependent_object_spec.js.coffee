@@ -1,16 +1,16 @@
 #= require brancusi/container
 
-describe 'brancusi.DependentObject', ->
+describe 'Brancusi.DependentObject', ->
   
   describe '.dependency', ->
     it "invokes DependentModule.dependencies on the calling class", ->
-      class Foo extends brancusi.DependentObject
+      class Foo extends Brancusi.DependentObject
         @dependency foo: 'foo', 'arg1', 'arg2'
     
       expect(Foo.dependencies).toEqual {foo: ['foo', ['arg1', 'arg2']]}
       
     it "respects inheritance", ->
-      class window.Foo extends brancusi.DependentObject
+      class window.Foo extends Brancusi.DependentObject
         @dependency foo: 'foo'
         
       class window.Bar extends Foo

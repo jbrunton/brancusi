@@ -1,10 +1,10 @@
 #= require brancusi/events
 
-describe 'brancusi.EventObject', ->
+describe 'Brancusi.EventObject', ->
   
   describe '.on', ->
     it "invokes EventsModule.on on the calling class", ->
-      class Foo extends brancusi.EventObject
+      class Foo extends Brancusi.EventObject
         @on 'Bar', ->
           
       instance = new Foo

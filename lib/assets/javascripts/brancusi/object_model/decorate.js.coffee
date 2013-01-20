@@ -1,6 +1,6 @@
 #= require ./extend
 
-namespace "brancusi"
+namespace "Brancusi"
     
 # Decorates the target object with methods from the given decorator, and invokes the constructor.
 #
@@ -8,7 +8,7 @@ namespace "brancusi"
 # @param decorator [Class] the decorator to use.
 # @param args... [Array] the arguments to pass to the decorator's constructor.
 #
-brancusi.decorate = ( target, decorator, args... ) ->
-
-    brancusi.extend( target, decorator )
-    decorator.apply( target, args )
+Brancusi.decorate = (target, decorator, args...) ->
+  Brancusi.extend(target, decorator)
+  decorator.apply(target, args)
+  

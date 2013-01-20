@@ -10,7 +10,7 @@ feature "Dependency Injection", ->
     class Hat
         constructor: ( @type = "trilby", @color = "black" ) ->
 
-    class Person extends brancusi.DependentObject
+    class Person extends Brancusi.DependentObject
         @dependency hat: "Hat"
         constructor: ( @name ) ->
         
@@ -35,7 +35,7 @@ feature "Dependency Injection", ->
     
         container = queen = null
         
-        class Queen extends brancusi.DependentObject
+        class Queen extends Brancusi.DependentObject
             @dependency crown: "Hat", "crown", "gold"
         
         Given "I have a container", ->
@@ -56,7 +56,7 @@ feature "Dependency Injection", ->
     
         container = queen = null
         
-        class Queen extends brancusi.DependentObject
+        class Queen extends Brancusi.DependentObject
             @dependency heir: (container) ->
                 container.resolve "Person", ["William"]
         

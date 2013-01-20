@@ -2,9 +2,9 @@
 #= require brancusi/events
 #= require brancusi/routes/mapper
 
-namespace "brancusi"
+namespace "Brancusi"
 
-class brancusi.Application extends brancusi.EventObject
+class Brancusi.Application extends Brancusi.EventObject
   
   @dependency mediator: "Mediator"
     
@@ -12,7 +12,7 @@ class brancusi.Application extends brancusi.EventObject
   @config: {}
   
   # Default bootstrapper
-  @Bootstrapper: brancusi.Bootstrapper
+  @Bootstrapper: Brancusi.Bootstrapper
 
   # Module classes for the application
   @Modules: {}
@@ -29,7 +29,7 @@ class brancusi.Application extends brancusi.EventObject
   # Model classes for the application
   @Models: {}
   
-  @routes: new brancusi.routes.Mapper
+  @routes: new Brancusi.RoutesMapper
 
   # Instantiates the application and bootstrapper, and resolves any dependencies, modules and controllers.
   #

@@ -1,6 +1,6 @@
-namespace "brancusi.renderer"
+namespace "Brancusi"
 
-class brancusi.renderer.RegionManager
+class Brancusi.RegionManager
   
   # Looks up and returns a region by name.
   #

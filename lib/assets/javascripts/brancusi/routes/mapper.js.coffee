@@ -1,9 +1,9 @@
-namespace "brancusi.routes"
+namespace "Brancusi"
 
 # given a url, maps to a controller + action
 # given a resource, maps to a url
 
-class brancusi.routes.Mapper
+class Brancusi.RoutesMapper
 
     constructor: ->
       @mappings = {}
@@ -23,7 +23,7 @@ class brancusi.routes.Mapper
       
     apply: (app, router) ->
       for url, { controller, action } of @mappings
-        dispatcher = new brancusi.routes.Dispatcher(app, controller, action)
+        dispatcher = new Brancusi.Dispatcher(app, controller, action)
         router.route(url, dispatcher.dispatch)
         
     # resource: ( resource ) ->

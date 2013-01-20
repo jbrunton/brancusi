@@ -1,18 +1,18 @@
 #= require brancusi/container
 
-namespace "brancusi"
+namespace "Bbrancusi"
 
-class brancusi.Bootstrapper
+class Brancusi.Bootstrapper
 
     configure_container: ( application ) ->
-        container = new brancusi.Container()
+        container = new Brancusi.Container()
         
         # TODO: do we need these?
         container.register_instance "Application", application
         container.register_instance "Container", container
         
-        container.register_class "Sandbox", brancusi.Sandbox
-        container.register_class "Mediator", brancusi.Mediator, singleton: true
-        container.register_class "RegionManager", brancusi.renderer.RegionManager, singleton: true
+        container.register_class "Sandbox", Brancusi.Sandbox
+        container.register_class "Mediator", Brancusi.Mediator, singleton: true
+        container.register_class "RegionManager", Brancusi.RegionManager, singleton: true
         
         container

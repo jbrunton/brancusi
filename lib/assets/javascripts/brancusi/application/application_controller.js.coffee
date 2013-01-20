@@ -1,8 +1,8 @@
 #= require ./application_module
 
-namespace "brancusi"
+namespace "Brancusi"
 
-class brancusi.ApplicationController extends brancusi.ApplicationModule
+class Brancusi.ApplicationController extends Brancusi.ApplicationModule
   @dependency renderer: 'Renderer'
   
   begin_request: (action_name) ->

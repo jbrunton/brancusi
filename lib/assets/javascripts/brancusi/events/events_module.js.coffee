@@ -1,8 +1,8 @@
-namespace "brancusi"
+namespace "Brancusi"
 
 # Provides convenience methods @on and publish for subscribing and publishing to application events with AER.
 #
-class brancusi.EventsModule
+class Brancusi.EventsModule
 
   # Generates a named event handler for AER.
   #

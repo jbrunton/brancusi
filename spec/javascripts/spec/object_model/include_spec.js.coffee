@@ -1,13 +1,13 @@
 #= require brancusi/object_model/include
 
-describe "brancusi.include", ->
+describe "Brancusi.include", ->
         
     class FooModule
         @bar: 'bar'
         baz: 'baz'
 
     class FooClass
-        brancusi.include(@, FooModule)
+        Brancusi.include(@, FooModule)
 
     it "mixes in static fields to the target", ->
         expect(FooClass.bar).toBe 'bar'

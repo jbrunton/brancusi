@@ -1,13 +1,13 @@
 #= require brancusi/application/sandbox
 
-describe "brancusi.Sandbox", ->
+describe "Brancusi.Sandbox", ->
 
   sandbox = container = null
 
   beforeEach ->
-    container = (new brancusi.Container)
+    container = (new Brancusi.Container)
       .register_instance('Mediator', jasmine.createSpyObj('Mediator', ['publish_scoped', 'subscribe']))
-      .register_class('Sandbox', brancusi.Sandbox)
+      .register_class('Sandbox', Brancusi.Sandbox)
         
     sandbox = container.resolve('Sandbox', ['some'])
 

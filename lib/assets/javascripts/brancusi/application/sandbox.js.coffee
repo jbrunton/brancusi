@@ -1,8 +1,8 @@
 #= require brancusi/container
 
-namespace "brancusi"
+namespace "Brancusi"
 
-class brancusi.Sandbox extends brancusi.DependentObject
+class Brancusi.Sandbox extends Brancusi.DependentObject
   @dependency mediator: "Mediator"
 
   constructor: (@scope) ->

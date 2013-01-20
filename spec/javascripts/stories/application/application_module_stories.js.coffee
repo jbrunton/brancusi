@@ -14,8 +14,8 @@ feature "Application Modules", ->
     Application = app = null
 
     Given "I have an application with a module", ->
-      Application = class extends brancusi.Application
-      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application = class extends Brancusi.Application
+      Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
         
     When "I configure it", ->
       app = Application.create()
@@ -28,8 +28,8 @@ feature "Application Modules", ->
     Application = app = null
     
     Given "I have an application with a module", ->
-      Application = class extends brancusi.Application
-      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application = class extends Brancusi.Application
+      Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
         @on 'application.initialize', ->
 
       app = Application.create()
@@ -46,8 +46,8 @@ feature "Application Modules", ->
     Application = app = null
     
     Given "I have an application with a module", ->
-      Application = class extends brancusi.Application
-      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application = class extends Brancusi.Application
+      Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
           @on 'application.ready', ->
           
       app = Application.create()
@@ -64,8 +64,8 @@ feature "Application Modules", ->
     Application = app = null
 
     Given "I have an application with a module", ->
-      Application = class extends brancusi.Application
-      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application = class extends Brancusi.Application
+      Application.Modules.ExampleModule = class extends Brancusi.ApplicationModule
         @on 'foo', ->
           
       app = Application.create()
@@ -83,12 +83,12 @@ feature "Application Modules", ->
     Application = app = null
     
     Given "I have an application with two modules", ->
-      Application = class extends brancusi.Application
+      Application = class extends Brancusi.Application
       
-      Application.Modules.GreeterModule = class extends brancusi.ApplicationModule
+      Application.Modules.GreeterModule = class extends Brancusi.ApplicationModule
         greet: -> @publish 'greet'
           
-      Application.Modules.ListenerModule = class extends brancusi.ApplicationModule
+      Application.Modules.ListenerModule = class extends Brancusi.ApplicationModule
         @on 'greeter.greet', ->
       
       app = Application.create()

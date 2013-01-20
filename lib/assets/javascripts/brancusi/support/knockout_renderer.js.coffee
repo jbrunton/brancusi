@@ -1,6 +1,6 @@
-namespace "brancusi.renderer"
+namespace "Brancusi.Knockout"
 
-class brancusi.renderer.KnockoutRenderer extends brancusi.renderer.Renderer
+class Brancusi.Knockout.Renderer extends Brancusi.Renderer
   
   render_template: (template, data, target) ->
     target.html $("<div></div>").attr 'data-bind',

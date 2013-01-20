@@ -1,10 +1,10 @@
 #= require ./events_module
 #= require ../container/dependent_object
 
-namespace "brancusi"
+namespace "Brancusi"
 
 # Base class for AER classes.
 #
-class brancusi.EventObject extends brancusi.DependentObject
-    @include brancusi.EventsModule
+class Brancusi.EventObject extends Brancusi.DependentObject
+    @include Brancusi.EventsModule
     

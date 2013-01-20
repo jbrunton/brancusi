@@ -1,6 +1,6 @@
-namespace "brancusi.renderer"
+namespace "brancusi"
 
-class brancusi.renderer.Renderer extends brancusi.ApplicationModule
+class Brancusi.Renderer extends Brancusi.ApplicationModule
   
   @dependency region_manager: 'RegionManager'
   

@@ -1,11 +1,11 @@
 #= require brancusi/object_model
 #= require brancusi/events/events_module
 
-describe "brancusi.EventsModule", ->
+describe "Brancusi.EventsModule", ->
 
     foo = new \
-      class Foo extends brancusi.BaseObject
-        @include brancusi.EventsModule        
+      class Foo extends Brancusi.BaseObject
+        @include Brancusi.EventsModule        
         @on "Bar", ->
 
     describe ".on", ->  

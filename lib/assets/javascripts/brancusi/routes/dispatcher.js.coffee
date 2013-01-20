@@ -1,6 +1,6 @@
-namespace "brancusi.routes"
+namespace "Brancusi"
 
-class brancusi.routes.Dispatcher extends brancusi.DependentObject
+class Brancusi.Dispatcher extends Brancusi.DependentObject
 
   constructor: (@app, @controller_name, @action_name) ->
   

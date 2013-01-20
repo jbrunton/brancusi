@@ -1,8 +1,8 @@
 #= require brancusi/events
 
-namespace "brancusi"
+namespace "Brancusi"
 
-class brancusi.ApplicationModule extends brancusi.EventObject    
+class Brancusi.ApplicationModule extends Brancusi.EventObject    
     constructor: (@name) ->
     
     @dependency sandbox: (container) ->

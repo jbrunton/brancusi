@@ -1,15 +1,15 @@
 #= require brancusi/application/application_module
 
-describe "brancusi.ApplicationModule", ->
+describe "Brancusi.ApplicationModule", ->
   
   module = null
 
   beforeEach ->
-    container = (new brancusi.Container)
+    container = (new Brancusi.Container)
       .register_instance('Mediator', {})
       .register_instance('Sandbox', jasmine.createSpyObj('Sandbox', ['publish']))
         
-    module = container.resolve(new brancusi.ApplicationModule('example'))
+    module = container.resolve(new Brancusi.ApplicationModule('example'))
 
   it "has a name", ->
     expect(module.name).toBe 'example'

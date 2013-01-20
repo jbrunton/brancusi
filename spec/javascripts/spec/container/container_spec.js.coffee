@@ -1,14 +1,14 @@
 #= require brancusi/container
 
-describe "brancusi.Container", ->
+describe "Brancusi.Container", ->
 
     container = null
     
-    class Person extends brancusi.DependentObject
+    class Person extends Brancusi.DependentObject
         constructor: ( @name ) ->
 
     beforeEach ->
-        container = new brancusi.Container
+        container = new Brancusi.Container
     
     it "resolves registered instances", ->
         fred = { name: "Fred" }
