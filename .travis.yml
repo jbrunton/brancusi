@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 1.9.3
+before-script:
+  - bundle exec rackup
+script:
+  - bundle exec rake guard:jasmine:specs
+  - bundle exec rake guard:jasmine:stories
+  
