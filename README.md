@@ -1,4 +1,4 @@
-# Brancusi
+# Brancusi [![Build Status](https://secure.travis-ci.org/jbrunton/frappuccino-core.png)](http://travis-ci.org/jbrunton/frappuccino-core)
 
 An opinionated CoffeeScript framework for developing single page applications.
 
