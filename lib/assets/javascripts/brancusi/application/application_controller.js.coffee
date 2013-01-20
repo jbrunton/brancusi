@@ -12,6 +12,10 @@ class Brancusi.ApplicationController extends Brancusi.ApplicationModule
   begin_request: (action_name) ->
     @request =
       action: action_name
+    @response = {}
+      
+  end_request: ->
+    @render() unless @response.template?
   
   # Invokes the application renderer.
   #
@@ -32,5 +36,6 @@ class Brancusi.ApplicationController extends Brancusi.ApplicationModule
     
     template ?= "#{@name}/#{@request.action}"
     
+    @response.template = template
     @renderer.render_page(template, context)
       

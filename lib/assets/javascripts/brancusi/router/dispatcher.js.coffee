@@ -8,3 +8,5 @@ class Brancusi.Dispatcher extends Brancusi.DependentObject
     @controller = @app.controllers["#{@controller_name}"] unless @controller?
     @controller.begin_request(@action_name)
     @controller[@action_name].apply(@controller, arguments)
+    @controller.end_request()
+    

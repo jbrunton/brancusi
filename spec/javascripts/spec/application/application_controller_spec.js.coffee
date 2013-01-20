@@ -9,6 +9,31 @@ describe "Brancusi.ApplicationController", ->
   it "has a renderer", ->
     expect(Brancusi.ApplicationController).toHaveDependency('renderer', type: 'Renderer')
     
+  describe "#begin_request", ->
+    it "sets the controller's request object with the given action name", ->
+      controller = new Brancusi.ApplicationController('home')
+      controller.begin_request('index')
+      expect(controller.request).toEqual { action: 'index' }   
+      
+  describe "#end_request", ->
+    controller = null
+    
+    beforeEach ->
+      controller = new Brancusi.ApplicationController('home')
+      controller.renderer = jasmine.createSpyObj('renderer', ['render_page'])
+      controller.begin_request('index')
+      
+    it "does nothing, if @render was called during the request cycle", ->
+      controller.render()
+      spyOn(controller, 'render')
+      controller.end_request()
+      expect(controller.render).not.toHaveBeenCalled()
+      
+    it "invokes the controller's render method if it was not already called during the request cycle", ->
+      spyOn(controller, 'render')
+      controller.end_request()
+      expect(controller.render).toHaveBeenCalled()
+    
   describe "#render", ->
     controller = null
     
