@@ -1,3 +1,4 @@
+#= require ./bootstrapper
 #= require brancusi/events
 #= require brancusi/routes/mapper
 
@@ -8,8 +9,10 @@ class brancusi.Application extends brancusi.EventObject
   @dependency mediator: "Mediator"
     
   # Default configuration options, which may be overridden by instances
-  @config:
-    bootstrapper: brancusi.Bootstrapper
+  @config: {}
+  
+  # Default bootstrapper
+  @Bootstrapper: brancusi.Bootstrapper
 
   # Module classes for the application
   @Modules: {}
@@ -100,8 +103,8 @@ class brancusi.Application extends brancusi.EventObject
   # Binds event handlers on the modules and controllers.
   #
   _bind_events: ->
-    @router.sandbox.bind_subscriptions(@router)
-    @renderer.sandbox.bind_subscriptions(@renderer)
+    @router.sandbox.bind_subscriptions(@router) if @router?
+    @renderer.sandbox.bind_subscriptions(@renderer) if @renderer?
     
     for module_name, module of @modules
       module.sandbox.bind_subscriptions(module)

@@ -1,4 +1,6 @@
 #= require brancusi/application
+#= require brancusi/renderer
+#= require brancusi/support
 
 feature "Application Modules", ->
 
@@ -13,13 +15,13 @@ feature "Application Modules", ->
 
     Given "I have an application with a module", ->
       Application = class extends brancusi.Application
-      Application.modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
         
     When "I configure it", ->
       app = Application.create()
             
     Then "the module is instantiated by the application", ->
-      expect(app.modules.example instanceof Application.modules.ExampleModule)
+      expect(app.modules.example instanceof Application.Modules.ExampleModule)
   
   scenario "Initialize the application modules", ->
     
@@ -27,7 +29,7 @@ feature "Application Modules", ->
     
     Given "I have an application with a module", ->
       Application = class extends brancusi.Application
-      Application.modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
         @on 'application.initialize', ->
 
       app = Application.create()
@@ -45,7 +47,7 @@ feature "Application Modules", ->
     
     Given "I have an application with a module", ->
       Application = class extends brancusi.Application
-      Application.modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
           @on 'application.ready', ->
           
       app = Application.create()
@@ -63,7 +65,7 @@ feature "Application Modules", ->
 
     Given "I have an application with a module", ->
       Application = class extends brancusi.Application
-      Application.modules.ExampleModule = class extends brancusi.ApplicationModule
+      Application.Modules.ExampleModule = class extends brancusi.ApplicationModule
         @on 'foo', ->
           
       app = Application.create()
@@ -83,10 +85,10 @@ feature "Application Modules", ->
     Given "I have an application with two modules", ->
       Application = class extends brancusi.Application
       
-      Application.modules.GreeterModule = class extends brancusi.ApplicationModule
+      Application.Modules.GreeterModule = class extends brancusi.ApplicationModule
         greet: -> @publish 'greet'
           
-      Application.modules.ListenerModule = class extends brancusi.ApplicationModule
+      Application.Modules.ListenerModule = class extends brancusi.ApplicationModule
         @on 'greeter.greet', ->
       
       app = Application.create()
