@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "An opinionated CoffeeScript framework for developing single page applications."
   s.description = "An opinionated CoffeeScript framework for developing single page applications."
 
-  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["Rakefile"]
   s.require_paths = ["lib"]
 
   s.add_dependency "rails"
