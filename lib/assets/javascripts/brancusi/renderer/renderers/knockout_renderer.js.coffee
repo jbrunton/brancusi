@@ -1,3 +1,5 @@
+#= require ../renderer
+
 namespace "Brancusi.Knockout"
 
 class Brancusi.Knockout.Renderer extends Brancusi.Renderer

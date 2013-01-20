@@ -1,6 +1,4 @@
 #= require brancusi/application
-#= require brancusi/renderer
-#= require brancusi/support
 
 feature "Application Modules", ->
 

@@ -1,3 +1,5 @@
+#= require ../router
+
 namespace "Brancusi.Davis"
 
 class Brancusi.Davis.Router extends Brancusi.Router

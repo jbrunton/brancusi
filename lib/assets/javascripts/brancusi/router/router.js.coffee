@@ -1,6 +1,8 @@
+#= require brancusi/application/application_module
+
 namespace "Brancusi"
 
-class Brancusi.Router extends brancusi.ApplicationModule
+class Brancusi.Router extends Brancusi.ApplicationModule
   
   constructor: ->
     super('router')

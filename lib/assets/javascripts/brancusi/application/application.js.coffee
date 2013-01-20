@@ -1,6 +1,6 @@
 #= require ./bootstrapper
 #= require brancusi/events
-#= require brancusi/routes/mapper
+#= require brancusi/router/mapper
 
 namespace "Brancusi"
 
