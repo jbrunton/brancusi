@@ -18,9 +18,9 @@ class Brancusi.Renderer extends Brancusi.ApplicationModule
     binding = bindings?[region_name]
     
     template = binding?.template || region_name
-    data = binding?.data
+    context = binding?.context
     
-    @render_template(template, data, region)
+    @render_template(template, context, region)
     
     for child in @region_manager.children(region)
       @render_region($(child), bindings)
@@ -32,9 +32,9 @@ class Brancusi.Renderer extends Brancusi.ApplicationModule
   # @param data [Object] the data model for the 'content' region.
   # @param bindings [Object] any further data bindings (e.g. for other regions).
   #
-  render_page: (template, data, bindings = {}) ->
+  render_page: (template, context, bindings = {}) ->
     bindings = _.defaults bindings, @default_bindings,
-      content: { template: template, data: data }
+      content: { template: template, context: context }
     
     master_region = @region_manager.find('master')
     @render_region(master_region, bindings)

@@ -17,13 +17,20 @@ class Brancusi.ApplicationController extends Brancusi.ApplicationModule
   #
   # @overload render()
   #   Renders the default template for the controller and action (e.g. 'home/index' for the home controller's index action).
-  #
-  # @overload render(template, context)
+  # @overload render(template)
+  # @overload render(context, opts)
   #   Renders the named template using the given rendering context. 
   #
   render: (args...) ->
-    if args.length > 0
-      @renderer.render_page(args...)
-    else
-      @renderer.render_page("#{@name}/#{@request.action}")
+    if args.length == 1
+      if _.isString(args[0])
+        template = args[0]
+      else
+        context = args[0]
+    else if args.length == 2
+      [context, { template }] = args
+    
+    template ?= "#{@name}/#{@request.action}"
+    
+    @renderer.render_page(template, context)
       
