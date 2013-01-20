@@ -7,23 +7,22 @@ require "brancusi/version"
 Gem::Specification.new do |s|
   s.name        = "brancusi"
   s.version     = Brancusi::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Brancusi."
-  s.description = "TODO: Description of Brancusi."
+  s.authors     = ["John Brunton"]
+  s.email       = ["john_brunton@hotmail.co.uk"]
+  s.homepage    = "https://github.com/jbrunton/brancusi"
+  s.summary     = "An opinionated CoffeeScript framework for developing single page applications."
+  s.description = "An opinionated CoffeeScript framework for developing single page applications."
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 3.2.9"
-  # s.add_dependency "jquery-rails"
+  s.add_dependency "rails"
+  s.add_dependency "railties"
+  s.add_dependency "coffee-script"
 
   s.add_development_dependency "sqlite3"
 
-  s.add_development_dependency 'coffee-script'
   s.add_development_dependency 'actionpack'
-  s.add_development_dependency 'railties'
   s.add_development_dependency 'tzinfo'
 
   s.add_development_dependency 'thin'
@@ -33,5 +32,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-jasmine'
   s.add_development_dependency 'jquery-rails'
   s.add_development_dependency 'underscore-rails'
-  s.add_dependency "railties", "~> 3.1"
 end
