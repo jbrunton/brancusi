@@ -1,12 +1,13 @@
 # Brancusi
 
-TODO: Write a gem description
+An opinionated CoffeeScript framework for developing single page applications.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these to your application's Gemfile:
 
     gem 'brancusi'
+    gem 'brancusi-rails'
 
 And then execute:
 
@@ -15,10 +16,23 @@ And then execute:
 Or install it yourself as:
 
     $ gem install brancusi
+    $ gem install brancusi-rails
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialize your repository with the necessary application and configuration files:
+
+    rails g brancusi:init
+
+Create a controller (with corresponding template):
+
+    rails g brancusi:controller home index
+    
+Add the necessary routing to ```app/assets/javascripts/app/config/routes.js.coffee```:
+
+    @route '/', 'home#index'
+
+Now starts your Rails server!
 
 ## Contributing
 
