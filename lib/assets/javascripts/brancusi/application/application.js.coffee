@@ -8,28 +8,22 @@ class Brancusi.Application extends Brancusi.EventObject
   
   @dependency mediator: "Mediator"
     
-  # Default configuration options, which may be overridden by instances
-  @config: {}
-  
-  # Default bootstrapper
-  @Bootstrapper: Brancusi.Bootstrapper
-
-  # Module classes for the application
-  @Modules: {}
-  
   # Module instances
   modules: {}
-  
-  # Controller classes for the application
-  @Controllers: {}
   
   # Controller instances
   controllers: {}
 
-  # Model classes for the application
-  @Models: {}
-  
-  @routes: new Brancusi.RoutesMapper
+  @reset: ->
+    @config = {}
+    @Bootstrapper = Brancusi.Bootstrapper
+    @Modules = {}
+    @Controllers = {}
+    @Models = {}
+    @routes = new Brancusi.RoutesMapper
+    @
+    
+  @reset()
 
   # Instantiates the application and bootstrapper, and resolves any dependencies, modules and controllers.
   #

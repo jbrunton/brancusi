@@ -5,6 +5,7 @@ namespace "Brancusi"
 class Brancusi.ApplicationController extends Brancusi.ApplicationModule
   @dependency renderer: 'Renderer'
   
+  # @private
   # Called by Brancusi.Dispatcher at the start of the request cycle.
   #
   # param action_name [String] the name of the action on the controller.
@@ -16,7 +17,12 @@ class Brancusi.ApplicationController extends Brancusi.ApplicationModule
       
   end_request: ->
     @render() unless @response.template?
-  
+    
+  respond_to: (action_name, args) ->
+    @begin_request(action_name)
+    @[action_name].apply(@, args)
+    @end_request()
+    
   # Invokes the application renderer.
   #
   # @overload render()
