@@ -1,9 +1,8 @@
 factory 'Application', ->
-  Application = class extends Brancusi.Application.reset()
+  Application = class extends Brancusi.Application(Support.Bootstrapper)
     @dependency router: 'Router'
     @dependency renderer: 'Renderer'
     
-  Application.Bootstrapper = Support.Bootstrapper
   Application
 
 factory 'application', (run) ->
