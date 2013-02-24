@@ -16,7 +16,7 @@ feature "Application Controllers", ->
     Application = app = null
 
     Given "I have an application with a controller", ->
-      Application = window.create('Application')
+      Application = create('Application')
 
       Application.Controllers.HomeController = class extends Brancusi.ApplicationController
         index: ->
@@ -37,7 +37,7 @@ feature "Application Controllers", ->
     Application = app = context = null
 
     Given "I have an application with a controller", ->
-      Application = window.create('Application')
+      Application = create('Application')
 
       Application.Controllers.HomeController = class extends Brancusi.ApplicationController
         index: ->
