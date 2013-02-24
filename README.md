@@ -32,7 +32,7 @@ Add the necessary routing to ```app/assets/javascripts/app/config/routes.js.coff
 
     @route '/', 'home#index'
 
-Now starts your Rails server!
+Now start your Rails server!
 
 ## Contributing
 
